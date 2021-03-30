@@ -1,0 +1,22 @@
+div.about{
+    display: block;
+    margin: auto;
+    padding: 3em;
+}
+
+div > h1{
+    color: whitesmoke;
+    font-size: 50px;
+    font-family: serif;
+}
+
+div > p{
+    display: inline;
+    /* margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    color: whitesmoke;
+    font-family: serif;
+    font-size: 20px;
+}

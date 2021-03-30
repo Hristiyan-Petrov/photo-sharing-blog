@@ -11,7 +11,7 @@ nav.navbar {
     justify-content: flex-end;
     align-self: center;  
     letter-spacing: 0.05rem;
-    background: #234465;
+    background: #412a2a;
     padding: 0.8rem 1rem;
     color: white;
     }
@@ -50,15 +50,28 @@ nav.navbar {
       border-radius: 0.4rem;
       text-decoration: none;
       font-weight: bold;
-      background: cadetblue;
+      background: rgb(212, 134, 44);
       color: rgb(255, 255, 255);
     }
     .button:hover,
     nav.navbar ul li a:hover,
     nav.navbar ul li:hover > a {
-      background: rgb(248, 215, 107);
+      background: rgb(202, 178, 43);
       color: rgb(0, 0, 0);
       font-weight: bold;
+    }
+
+    .button {
+      display: block;
+      padding: 0.6rem 1rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      font-weight: bold;
+      background: rgb(32, 118, 129);
+      color: rgb(255, 255, 255);
+      border: none;
+      font-size: 1rem;
+    
     }
   
   .dashboard nav{
@@ -99,3 +112,6 @@ nav.navbar {
     display: flex;
   }
   
+  .dashboard .navbar {
+    justify-content: center; 
+  }

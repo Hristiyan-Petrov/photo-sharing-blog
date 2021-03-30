@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import logo from './logo.png';
 import './Header.css';
 
-console.log(logo);
-
 const Header = () => {
     return (
         <header id="site-header">
@@ -11,15 +9,15 @@ const Header = () => {
 
                 <section className="navbar-dashboard">
                     <div className="first-bar">
-                        <img src={logo} alt="Logo" />
-                        <Link to="/">Dashboard</Link>
-                        <Link className="button" to="#">My Pets</Link>
-                        <Link className="button" to="/pets/create">Add Pet</Link>
-                        <Link className="button" to="">Contacts</Link>
+
+                        <Link to="/">
+                            <img src={logo} alt="Logo" />
+                        </Link>
+                        <Link className="button" to="#">Add your photo here</Link>
+                        <Link className="button" to="/about">About</Link>
                     </div>
                     <div className="second-bar">
                         <ul>
-                            <li>Welcome, MY MAN!</li>
                             <li><a href="#"><i className="fas fa-sign-out-alt"></i> Logout</a></li>
                             <li><a href="#"><i className="fas fa-user-plus"></i> Register</a></li>
                             <li><a href="#"><i className="fas fa-sign-in-alt"></i> Login</a></li>
