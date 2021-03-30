@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  padding: 0;
+  margin: 0;
+  /* background-color: #eff4f4; */
+  background-image: url("./backG.png");
+  background-repeat: no-repeat;
+  background-size: cover
+}

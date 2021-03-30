@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import logo from './logo.png';
+import './Header.css';
+
+console.log(logo);
 
 const Header = () => {
     return (
@@ -7,23 +11,27 @@ const Header = () => {
 
                 <section className="navbar-dashboard">
                     <div className="first-bar">
+                        <img src={logo} alt="Logo" />
                         <Link to="/">Dashboard</Link>
                         <Link className="button" to="#">My Pets</Link>
                         <Link className="button" to="/pets/create">Add Pet</Link>
+                        <Link className="button" to="">Contacts</Link>
                     </div>
                     <div className="second-bar">
                         <ul>
                             <li>Welcome, MY MAN!</li>
                             <li><a href="#"><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li><a href="#"><i className="fas fa-user-plus"></i> Register</a></li>
+                            <li><a href="#"><i className="fas fa-sign-in-alt"></i> Login</a></li>
                         </ul>
                     </div>
                 </section>
-                <section className="navbar-anonymous">
+                {/* <section className="navbar-anonymous">
                     <ul>
                         <li><a href="#"><i className="fas fa-user-plus"></i> Register</a></li>
                         <li><a href="#"><i className="fas fa-sign-in-alt"></i> Login</a></li>
                     </ul>
-                </section>
+                </section> */}
             </nav>
         </header>
     );
