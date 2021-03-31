@@ -1,0 +1,61 @@
+legend {
+    color: whitesmoke;
+    font-family: serif;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.input {
+    display: block;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    margin-bottom: 20px;
+}
+
+input, select {
+    border-radius: 8px;
+}
+
+select {
+    cursor: pointer;
+}
+
+input {
+    width: 270px;    
+}
+
+label {
+    display: inline;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgb(212, 134, 44);
+    color: rgb(255, 255, 255);
+    width: 100px;
+}
+
+fieldset {
+    display: inline-block;
+    border: none;
+    width: 600px;
+}
+
+.button-submit {
+    display: inline;
+    padding: 0.4rem 0.8rem;
+    margin-top: 100px;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgb(212, 134, 44);
+    color: rgb(255, 255, 255);
+    width: 250px;
+}
+
+.button-submit:hover {
+    background: rgb(202, 178, 43);
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      cursor: pointer;
+}

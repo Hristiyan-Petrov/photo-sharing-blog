@@ -13,7 +13,7 @@ const Header = () => {
                         <Link to="/">
                             <img src={logo} alt="Logo" />
                         </Link>
-                        <Link className="button" to="#">Add your photo here</Link>
+                        <Link className="button" to="/add-photo">Add your photo here</Link>
                         <Link className="button" to="/about">About</Link>
                     </div>
                     <div className="second-bar">
