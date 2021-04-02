@@ -1,7 +1,11 @@
 div.about{
-    display: block;
-    margin: auto;
-    padding: 3em;
+    display: inline-block;
+    margin-top: 100px;
+    padding-top: px;
+    padding-bottom: 20px;
+    border-radius: 1.5rem;
+    background: rgb(212, 134, 44);
+    width: 900px;
 }
 
 div > h1{

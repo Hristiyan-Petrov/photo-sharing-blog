@@ -1,5 +1,4 @@
-import firebase from '../Firestore/Firestore'
-
+import * as photoService from '../../services/photoServise';
 import "./AddPhoto.css";
 
 const AddPhoto = ({
@@ -11,13 +10,7 @@ const AddPhoto = ({
 
         const { imageURL, description, category } = e.target;
 
-        const db = firebase.firestore();
-        db.collection('photos')
-            .add({
-                imageURL: imageURL.value,
-                description: description.value,
-                category: category.value
-            })
+        photoService.addPhoto(imageURL, description, category)
             .then(() => {
                 history.push('/');
             })

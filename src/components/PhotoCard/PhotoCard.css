@@ -1,0 +1,52 @@
+.other-photo {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-position: inside;
+   margin: 10px;
+  /* width: 400px; */
+}
+
+.img img {
+    /* width: 20px; */
+    /* width: 15rem; */
+    /* height: 50px; */
+    position: relative;
+    overflow: hidden;
+    padding: 0rem;
+
+    display: block;
+    max-width:400px;
+    max-height:400px;
+    width: auto;
+    height: auto;
+    border: 5px ridge orange;
+}
+
+.description {
+	width: 17rem;
+	height: 10vh;
+	padding: 2rem;
+	overflow: auto;
+}
+
+.photo-info {
+    padding-bottom: 1rem;
+}
+
+.button {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: cadetblue;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 1rem;
+  
+}
+
+.fa-heart {
+    color: red;
+  }

@@ -1,16 +1,16 @@
-ul {
+/* .navbr ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333333;
-}
+} */
 
-li {
+.cat-nav-ul li {
   float: left;
 }
 
-li a {
+.cat-nav-ul li a {
   margin: 10px;
   display: block;
   /* color: white; */

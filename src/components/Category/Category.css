@@ -1,0 +1,17 @@
+
+.categories .heading {
+    margin-top: 30px;
+    display: inline-block;
+    /* background: rgb(65, 46, 25); */
+    color: rgb(255, 255, 255);
+    border-radius: 0.4rem;
+    width: auto;
+    font-family: serif;
+}
+
+.categories .photos-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
