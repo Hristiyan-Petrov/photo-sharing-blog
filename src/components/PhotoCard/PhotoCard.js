@@ -1,22 +1,29 @@
+import { Component } from 'react';
+import { Link } from "react-router-dom";
+import * as photoService from "../../services/photoServise";
 import './PhotoCard.css';
 
-const PhotoCard = ({
-    id,
-    description,
-    imageURL,
-    category,
-    likes
-}) => {
-    return (
-        <li className="other-photo">
-            <p className="img"><img src={imageURL} /></p>
-            <p className="description">• {description} •</p>
-            <div className="photo-info">
-                <i className="fas fa-heart"></i> <span>Total likes: {likes}</span>
-                <a><button className="button">Like!<i className="fas fa-heart"></i></button></a>
-            </div>
-        </li>
-    );
+class PhotoCard extends Component {
+    // description,
+    // imageURL,
+    // category,
+    // likes
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <li className="other-photo">
+                <p className="img"><img src={this.props.imageURL} /></p>
+                <p className="description">• {this.props.description} •</p>
+                <div className="photo-info">
+                    <Link className="button" to={`/photo/${this.props.id}`}>Open!</Link>
+                </div>
+            </li>
+        );
+    }
+
 };
 
 export default PhotoCard;

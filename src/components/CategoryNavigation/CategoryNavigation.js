@@ -5,12 +5,12 @@ const CategoryNavigation = () => {
     return (
         <nav className="navbar">
             <ul className="cat-nav-ul">
-                <li><Link to="/beaches">Beaches</Link></li>
-                <li><Link to="/mountains">Mountains</Link></li>
-                <li><Link to="/food">Food</Link></li>
-                <li><Link to="/cars">Cars</Link></li>
-                <li><Link to="/animals">Animals</Link></li>
-                <li><Link to="/architecture">Architecture</Link></li>
+                <li><Link to="/photos/beaches">Beaches</Link></li>
+                <li><Link to="/photos/mountains">Mountains</Link></li>
+                <li><Link to="/photos/food">Food</Link></li>
+                <li><Link to="/photos/cars">Cars</Link></li>
+                <li><Link to="/photos/animals">Animals</Link></li>
+                <li><Link to="/photos/architecture">Architecture</Link></li>
             </ul>
         </nav>
     );

@@ -15,22 +15,31 @@ class Category extends Component {
             //heading == category but with first capital letter
             clickedCategory: heading,
             heading,
-            photos: []
+            photos: [],
+            category
         }
     }
 
     componentDidMount() {
         let allPhotos = [];
 
-        photoService.getAll()
+        photoService.getAll(this.state.category)
             .then(res => {
                 res.forEach(photo => {
                     if (photo.data().category == this.state.clickedCategory) {
-                        allPhotos.push(photo.data());
+                        let currentPhoto = {
+                            imageURL: photo.data().imageURL,
+                            description: photo.data().description,
+                            category: photo.data().category,
+                            likes: photo.data().likes,
+                            id: photo.id
+                        };
+                        allPhotos.push(currentPhoto);
+
+                        // allPhotos.push(photo.data());
                     }
                 });
                 this.setState({ photos: allPhotos })
-                // console.log(this.state.photos);
             });
     };
 
