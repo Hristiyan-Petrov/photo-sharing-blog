@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { Link } from "react-router-dom";
-import * as photoService from "../../services/photoServise";
 import './PhotoCard.css';
 
 class PhotoCard extends Component {

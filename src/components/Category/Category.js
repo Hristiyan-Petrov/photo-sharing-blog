@@ -13,33 +13,15 @@ class Category extends Component {
 
         this.state = {
             //heading == category but with first capital letter
-            clickedCategory: heading,
             heading,
             photos: [],
-            category
         }
     }
 
     componentDidMount() {
-        let allPhotos = [];
-
-        photoService.getAll(this.state.category)
+        photoService.getAllFromCategory(this.state.heading)
             .then(res => {
-                res.forEach(photo => {
-                    if (photo.data().category == this.state.clickedCategory) {
-                        let currentPhoto = {
-                            imageURL: photo.data().imageURL,
-                            description: photo.data().description,
-                            category: photo.data().category,
-                            likes: photo.data().likes,
-                            id: photo.id
-                        };
-                        allPhotos.push(currentPhoto);
-
-                        // allPhotos.push(photo.data());
-                    }
-                });
-                this.setState({ photos: allPhotos })
+                this.setState({ photos: res })
             });
     };
 
@@ -51,7 +33,6 @@ class Category extends Component {
 
                 <ul className="photos-list">
                     {this.state.photos.map(x =>
-                        // console.log(x.category)
                         <PhotoCard key={x.imageURL} {...x} />
                     )}
                 </ul>

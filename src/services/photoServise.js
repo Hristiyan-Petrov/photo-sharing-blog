@@ -12,32 +12,29 @@ export const addPhoto = (imageURL, description, category) => {
         });
 };
 
-export const getAll = (cat) => {
-    //let photos = [];
+export const getAllFromCategory = async (cat) => {
+    let photos = [];
 
-    return db.collection('photos').get()
+    await db.collection('photos').get()
+        .then(res => {
+            res.forEach(photo => {
+                if (photo.data().category == cat) {
 
-    // .then(res => {
-    //     res.forEach(photo => {
-    //         if (photo.data().category == cat) {
-    //             photos.push(photo.data());
-    //         }
-    //     })
-    //     return photos;
-    // })
+                    let currentPhoto = {
+                        imageURL: photo.data().imageURL,
+                        description: photo.data().description,
+                        category: photo.data().category,
+                        likes: photo.data().likes,
+                        id: photo.id
+                    };
+
+                    photos.push(currentPhoto);
+                }
+            })
+        })
+
+    return photos;
 };
-
-// export const getOne = async (imageURL) => {
-//     let searchedPhoto = null;
-//     await db.collection('photos').get()
-//         .then(res => {
-//             res.forEach(photo => {
-//                 if (photo.data().imageURL == imageURL)
-//                     searchedPhoto = photo.data();
-//             })
-//         });
-//     return searchedPhoto;
-// };
 
 export const like = async (id, likes) => {
 

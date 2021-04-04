@@ -17,9 +17,9 @@ const LikePage = ({
     const onLikeButtonClickHandler = () => {
         let increasedLikes = photo.likes + 1;
         photoService.like(match.params.photoID, increasedLikes)
-        .then(res => {
-            setPhoto(res.data());
-        })
+            .then(res => {
+                setPhoto(res.data());
+            })
     };
 
     return (

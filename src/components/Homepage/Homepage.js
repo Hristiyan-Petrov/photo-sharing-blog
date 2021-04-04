@@ -10,10 +10,9 @@ class Homepage extends Component {
 
     render() {
         return (
-            // <div style={{ backgroundImage: `url(${background})` }}>
             <section className="dashboard">
                 <h1 className="heading">Enjoy the world of aesthetic photography</h1>
-                <p className="selector">Select category</p>
+                <p className="selector">Select category to continue!</p>
 
                 <CategoryNavigation />
                     
