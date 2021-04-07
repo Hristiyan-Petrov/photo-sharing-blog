@@ -1,25 +1,31 @@
-import { Component } from "react";
+// import { Component } from "react";
 import CategoryNavigation from '../CategoryNavigation/CategoryNavigation';
 
 import './Homepage.css'
 
-class Homepage extends Component {
-    constructor(props) {
-        super(props);
-    }
+const Homepage = ({
+    isAuthenticated,
+    email
+}) => {
 
-    render() {
-        return (
-            <section className="dashboard">
-                <h1 className="heading">Enjoy the world of aesthetic photography</h1>
-                <p className="selector">Select category to continue!</p>
+    return (
+        <section className="dashboard">
+            {isAuthenticated
+                // V zaglavieto podavam chastta ot email, izryazana do '@' s glavna bukva, kato username
+                ? <h1 className="heading">Enjoy the world of aesthetic photography, {(email.substring(0, email.indexOf('@'))).charAt(0).toUpperCase() + (email.substring(0, email.indexOf('@'))).slice(1)}!</h1>
+                : <h1 className="heading">Please login to browse photos!</h1>
+            }
+            {isAuthenticated
+                ? <p className="selector">Browse the most aesthetic photos in the web</p>
+                : null
+            }
+            
 
-                <CategoryNavigation />
-                    
-            </section>
-        );
-    };
-    
+            <CategoryNavigation isAuthenticated={isAuthenticated} />
+
+        </section>
+    );
+
 };
 
 export default Homepage;

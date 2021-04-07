@@ -2,7 +2,8 @@ import * as photoService from '../../services/photoServise';
 import "./AddPhoto.css";
 
 const AddPhoto = ({
-    history
+    history,
+    email
 }) => {
 
     const onSubmitHandler = (e) => {
@@ -10,8 +11,13 @@ const AddPhoto = ({
 
         const { imageURL, description, category } = e.target;
 
-        photoService.addPhoto(imageURL, description, category)
-            .then(() => {
+        if (imageURL.value == '' || description.value == '') {
+            return;
+        }
+
+        photoService.addPhoto(imageURL, description, category, email)
+            .then(createdPhoto => {
+                console.log(createdPhoto.id);
                 history.push('/');
             })
             .catch(err => console.log(err));

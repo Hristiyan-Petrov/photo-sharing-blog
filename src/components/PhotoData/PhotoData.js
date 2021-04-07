@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import firebase from '../Firestore/Firestore'
+import firebase from '../../utils/firebase'
 
 class Photo extends Component {
     constructor(props) {

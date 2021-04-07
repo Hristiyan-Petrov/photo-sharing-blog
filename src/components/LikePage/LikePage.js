@@ -32,6 +32,7 @@ const LikePage = ({
                     <p className="like-description">• {photo.description} •</p>
                     <span className="likes-counter">Total likes: {photo.likes}</span>
                     <button className="button" onClick={onLikeButtonClickHandler}>Like!</button>
+                    <p className="photo-creator">Creator: {photo.creator}</p>
                 </div>
 
             </section>

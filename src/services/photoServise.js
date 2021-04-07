@@ -1,14 +1,15 @@
-import firebase from '../components/Firestore/Firestore';
+import firebase from '../utils/firebase';
 
 const db = firebase.firestore();
 
-export const addPhoto = (imageURL, description, category) => {
+export const addPhoto = (imageURL, description, category, email) => {
     return db.collection('photos')
         .add({
             imageURL: imageURL.value,
             description: description.value,
             category: category.value,
-            likes: 0
+            likes: 0,
+            creator: email
         });
 };
 
@@ -49,9 +50,9 @@ export const like = async (id, likes) => {
         .get();
 }
 
-
 export const getOne = (id) => {
     return db.collection('photos')
         .doc(id)
         .get();
 }
+

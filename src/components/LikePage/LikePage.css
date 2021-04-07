@@ -26,7 +26,6 @@
 	display: block;
     font-size: 30px;
     margin-left: 50px;
-    /* margin-right: 20px; */
 }
 
 .button {
@@ -37,4 +36,11 @@
 .likes-counter {
     margin-bottom: 15px;
     display: block;
+}
+
+.photo-creator {
+    color: black;
+	display: block;
+    font-size: 20px;
+    margin-left: -160px;
 }

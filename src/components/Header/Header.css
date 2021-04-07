@@ -61,7 +61,7 @@ nav.navbar {
       font-weight: bold;
     }
 
-    .button {
+    .auth-button {
       display: block;
       padding: 0.6rem 1rem;
       border-radius: 0.4rem;
@@ -71,7 +71,14 @@ nav.navbar {
       color: rgb(255, 255, 255);
       border: none;
       font-size: 1rem;
-    
+      margin-top: 10px;
+      margin-left: 15px;
+    }
+
+    .auth-button:hover {
+      background: rgb(202, 178, 43);
+      color: rgb(0, 0, 0);
+      font-weight: bold;
     }
   
   .dashboard nav{
