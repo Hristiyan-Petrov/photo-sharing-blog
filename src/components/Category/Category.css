@@ -15,3 +15,26 @@
   flex-wrap: wrap;
 }
 
+.no-photos {
+  font-size: 30px;
+  display: block;
+}
+
+.link-button {
+    display:inline;
+    padding: 0.6rem 1rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: bold;
+    background: cadetblue;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.link-button:hover{
+    background: rgb(202, 178, 43);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}

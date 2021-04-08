@@ -18,7 +18,6 @@ class Category extends Component {
                 photos: [],
             }
         } else {
-            // reuse component for 'my-photos' url
             this.state = {
                 heading: 'My photos',
                 photos: []
@@ -27,32 +26,17 @@ class Category extends Component {
     }
 
     componentDidMount() {
-        if (this.props.match.url != '/my-photos') {
-            photoService.getAllFromCategory(this.state.heading)
-                .then(res => {
-                    this.setState({ photos: res })
-                });
-        } else {
-            photoService.getAllFromUser(this.props.email)
-                .then(res => {
-                    console.log(this.state.heading);
-                    this.setState({ photos: res })
-                });
-        }
+        photoService.getAllFromCategory(this.state.heading)
+            .then(res => {
+                this.setState({ photos: res })
+            });
     }
 
     componentDidUpdate() {
-        if (this.props.match.url != '/my-photos') {
-            photoService.getAllFromCategory(this.state.heading)
-                .then(res => {
-                    this.setState({ photos: res })
-                });
-        } else {
-            photoService.getAllFromUser(this.props.email)
-                .then(res => {
-                    this.setState({ heading: 'My photos', photos: res })
-                });
-        }
+        photoService.getAllFromCategory(this.state.heading)
+            .then(res => {
+                this.setState({ photos: res })
+            });
     }
 
     render() {
@@ -72,5 +56,3 @@ class Category extends Component {
 }
 
 export default Category;
-
-

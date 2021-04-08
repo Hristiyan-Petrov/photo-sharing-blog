@@ -18,7 +18,7 @@ const Header = ({
                         </Link>
                         <Link className="button" to="/about">About</Link>
                         {isAuthenticated
-                            ? <Link className="button" to="/add-photo">Add your photo here</Link>
+                            ? <Link className="button" to="/add-photo">Add your photo</Link>
                             : null
                         }
                         {isAuthenticated

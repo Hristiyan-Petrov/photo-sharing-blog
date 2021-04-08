@@ -7,6 +7,7 @@ import Homepage from './components/Homepage/Homepage';
 import About from "./components/About/About";
 import AddPhoto from "./components/AddPhoto/AddPhoto";
 import Category from "./components/Category/Category";
+import MyPhotos from "./components/Category/MyPhotos";
 import LikePage from "./components/LikePage/LikePage";
 import Login from "./components/Authentication/Login/Login"
 import Register from "./components/Authentication/Register/Register"
@@ -36,7 +37,7 @@ function App() {
             <Route path="/add-photo" render={props => <AddPhoto {...props} email={authInfo.email} />} />
             <Route path="/photos/:category" component={Category} />
             <Route path="/photo/:photoID" render={props => <LikePage {...props} email={authInfo.email} />} />
-            <Route path="/my-photos" render={props => <Category {...props} email={authInfo.email} />} />
+            <Route path="/my-photos" render={props => <MyPhotos {...props} email={authInfo.email} />} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/logout" render={() => {

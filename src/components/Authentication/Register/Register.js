@@ -1,8 +1,12 @@
+import { useState } from "react";
 import * as authService from '../../../services/authService';
+import '../Messages/Messages.css'
 
 const Register = ({
     history
 }) => {
+    const [validationMessage, setMessage] = useState(null);
+
     const onRegisterSubmitHandler = (e) => {
         e.preventDefault();
 
@@ -11,7 +15,7 @@ const Register = ({
         const rePassword = e.target.rePassword.value;
 
         if (password != rePassword) {
-            console.log('Password should match!');
+            setMessage('Passwords should match.')
             return;
         }
 
@@ -19,13 +23,12 @@ const Register = ({
             .then(userCredential => {
                 history.push('/');
             })
-            .catch(res => console.log(res.message));
-            // => {
-                // setErrorMessage(res.message);      hook
-            // }
-
-            // let hasError = Boolean(errorMessage);
+            .catch(res => {
+                setMessage(res.message);
+            });
     }
+
+    let hasMessage = Boolean(validationMessage);
 
     return (
         <section className="create">
@@ -51,10 +54,10 @@ const Register = ({
                         <span className="input">
                             <input type="password" name="rePassword" id="rePassword" placeholder="Repeat Password" />
                         </span>
-                        {/* {hasError
-                        ?   <span clssName="error">
-                        :
-                        } */}
+                        {hasMessage
+                        ? <span className="message">{validationMessage}</span>
+                        : null
+                        }
                         <input className="button-submit" type="submit" value="Register" />
                     </p>
 
