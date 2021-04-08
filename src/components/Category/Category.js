@@ -7,24 +7,53 @@ class Category extends Component {
     constructor(props) {
         super(props);
 
-        let category = props.match.params.category;
-        let firstLetterCapital = category.charAt(0).toUpperCase();
-        let heading = firstLetterCapital + category.substring(1);
+        if (props.match.url != '/my-photos') {
+            let category = props.match.params.category;
+            let firstLetterCapital = category.charAt(0).toUpperCase();
+            let heading = firstLetterCapital + category.substring(1);
 
-        this.state = {
-            //heading == category but with first capital letter
-            heading,
-            photos: [],
+            this.state = {
+                //heading == category but with first capital letter
+                heading,
+                photos: [],
+            }
+        } else {
+            // reuse component for 'my-photos' url
+            this.state = {
+                heading: 'My photos',
+                photos: []
+            }
         }
     }
 
     componentDidMount() {
-        photoService.getAllFromCategory(this.state.heading)
-            .then(res => {
-                this.setState({ photos: res })
-            });
-    };
+        if (this.props.match.url != '/my-photos') {
+            photoService.getAllFromCategory(this.state.heading)
+                .then(res => {
+                    this.setState({ photos: res })
+                });
+        } else {
+            photoService.getAllFromUser(this.props.email)
+                .then(res => {
+                    console.log(this.state.heading);
+                    this.setState({ photos: res })
+                });
+        }
+    }
 
+    componentDidUpdate() {
+        if (this.props.match.url != '/my-photos') {
+            photoService.getAllFromCategory(this.state.heading)
+                .then(res => {
+                    this.setState({ photos: res })
+                });
+        } else {
+            photoService.getAllFromUser(this.props.email)
+                .then(res => {
+                    this.setState({ heading: 'My photos', photos: res })
+                });
+        }
+    }
 
     render() {
         return (
@@ -32,8 +61,8 @@ class Category extends Component {
                 <h1 className="heading">{this.state.heading}</h1>
 
                 <ul className="photos-list">
-                    {this.state.photos.map(x =>
-                        <PhotoCard key={x.imageURL} {...x} />
+                    {this.state.photos.map(photo =>
+                        <PhotoCard key={photo.imageURL} {...photo} />
                     )}
                 </ul>
 

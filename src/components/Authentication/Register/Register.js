@@ -20,6 +20,11 @@ const Register = ({
                 history.push('/');
             })
             .catch(res => console.log(res.message));
+            // => {
+                // setErrorMessage(res.message);      hook
+            // }
+
+            // let hasError = Boolean(errorMessage);
     }
 
     return (
@@ -46,6 +51,10 @@ const Register = ({
                         <span className="input">
                             <input type="password" name="rePassword" id="rePassword" placeholder="Repeat Password" />
                         </span>
+                        {/* {hasError
+                        ?   <span clssName="error">
+                        :
+                        } */}
                         <input className="button-submit" type="submit" value="Register" />
                     </p>
 

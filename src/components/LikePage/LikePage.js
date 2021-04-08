@@ -3,7 +3,8 @@ import * as photoService from '../../services/photoServise';
 import './LikePage.css';
 
 const LikePage = ({
-    match
+    match,
+    email
 }) => {
     let [photo, setPhoto] = useState({});
 
@@ -13,6 +14,9 @@ const LikePage = ({
                 setPhoto(res.data());
             })
     }, []);
+
+    //used for creator he can't like his own photos
+    let imCreator = Boolean(photo.creator == email);
 
     const onLikeButtonClickHandler = () => {
         let increasedLikes = photo.likes + 1;
@@ -31,8 +35,14 @@ const LikePage = ({
                 <div>
                     <p className="like-description">• {photo.description} •</p>
                     <span className="likes-counter">Total likes: {photo.likes}</span>
-                    <button className="button" onClick={onLikeButtonClickHandler}>Like!</button>
-                    <p className="photo-creator">Creator: {photo.creator}</p>
+                    {imCreator
+                        ? null
+                        : <button className="button" onClick={onLikeButtonClickHandler}>Like!</button>
+                    }
+                    {imCreator
+                        ? <p className="photo-creator">Created by you!</p>
+                        : <p className="photo-creator">Creator: {photo.creator}</p>
+                    }
                 </div>
 
             </section>

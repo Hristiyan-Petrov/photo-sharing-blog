@@ -22,7 +22,7 @@ const Header = ({
                             : null
                         }
                         {isAuthenticated
-                            ? <Link className="button" to="/your-photos">Your photos</Link>
+                            ? <Link className="button" to="/my-photos">My photos</Link>
                             : null
                         }
                     </div>

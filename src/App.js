@@ -2,7 +2,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
 import Header from './components/Header/Header';
-import PhotoData from './components/PhotoData/PhotoData';
 import Footer from './components/Footer/Footer';
 import Homepage from './components/Homepage/Homepage';
 import About from "./components/About/About";
@@ -36,7 +35,8 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/add-photo" render={props => <AddPhoto {...props} email={authInfo.email} />} />
             <Route path="/photos/:category" component={Category} />
-            <Route path="/photo/:photoID" component={LikePage} />
+            <Route path="/photo/:photoID" render={props => <LikePage {...props} email={authInfo.email} />} />
+            <Route path="/my-photos" render={props => <Category {...props} email={authInfo.email} />} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/logout" render={() => {

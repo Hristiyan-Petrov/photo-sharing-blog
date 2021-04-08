@@ -26,7 +26,8 @@ export const getAllFromCategory = async (cat) => {
                         description: photo.data().description,
                         category: photo.data().category,
                         likes: photo.data().likes,
-                        id: photo.id
+                        id: photo.id,
+                        creator: photo.data().creator
                     };
 
                     photos.push(currentPhoto);
@@ -36,6 +37,31 @@ export const getAllFromCategory = async (cat) => {
 
     return photos;
 };
+
+export const getAllFromUser = async (email) => {
+    let photos = [];
+
+    await db.collection('photos').get()
+        .then(res => {
+            res.forEach(photo => {
+                if (photo.data().creator == email) {
+
+                    let currentPhoto = {
+                        imageURL: photo.data().imageURL,
+                        description: photo.data().description,
+                        category: photo.data().category,
+                        likes: photo.data().likes,
+                        id: photo.id,
+                        creator: photo.data().creator
+                    };
+
+                    photos.push(currentPhoto);
+                }
+            })
+        })
+
+    return photos;
+}
 
 export const like = async (id, likes) => {
 
